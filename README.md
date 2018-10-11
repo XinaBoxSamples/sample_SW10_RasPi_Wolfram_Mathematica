@@ -5,4 +5,4 @@ You can find the source code in the SW10.txt file. Just cut and paste into Wolfr
 
 Here is a video covering the sample: https://youtu.be/j9fPl09kaMo
 
-![Screenshot Mathematica.png]
+[Screenshot Plot.png]
