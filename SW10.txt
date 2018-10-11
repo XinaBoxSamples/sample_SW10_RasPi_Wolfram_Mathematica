@@ -1,0 +1,15 @@
+t[] := (
+   DeviceWrite[SW10, 0]; (* Read from Register 0 = 
+   0x00*)
+   {b1, b2} = DeviceRead[SW10, 2]; (* Read 2 bytes *)
+   
+   w = b1*256 + b2; (* Combine to a word *)
+   
+   BitShiftRight[w, 5]* 0.125); (* Correct as per datasheet *)
+
+SW10 = DeviceOpen["I2C", 72]; (* Open I2C on address 72 = 0x48 *)
+
+p = Table[Pause[0.2]; 
+   t[], {100}]; (* 100 reads 5/secs *)
+ListLinePlot[p, 
+ Filling -> Axis, InterpolationOrder -> 2]
